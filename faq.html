@@ -82,11 +82,10 @@
 async function refreshMCStatus() {
     const ip = 'fryuruvani.f5.si:13560'; 
     const statusBadge = document.getElementById('mc-status-badge');
-    const iconImg = document.getElementById('mc-icon');
     const playersText = document.getElementById('mc-players');
+    const iconImg = document.getElementById('mc-icon'); // アイコン要素
 
     try {
-        // ★ここを /bedrock/2/ に変更しました
         const res = await fetch(`https://api.mcsrvstat.us/bedrock/2/${ip}`);
         const data = await res.json();
 
@@ -94,29 +93,17 @@ async function refreshMCStatus() {
             statusBadge.innerText = "● ONLINE";
             statusBadge.style.color = "#2ecc71";
             playersText.innerText = `${data.players.online} / ${data.players.max}`;
-            
-            // 統合版でもアイコンが設定されていれば表示
-            if (data.icon) {
-                iconImg.src = data.icon;
-                iconImg.style.display = "block";
-                iconImg.style.opacity = "1";
-            } else {
-                // アイコンがない場合は、外部サービスから取得を試みるかデフォルト画像を表示
-                iconImg.src = `https://api.mcstatus.io/v2/widget/bedrock/${ip}`; 
-                iconImg.style.display = "block";
-                iconImg.style.opacity = "1";
-            }
+            iconImg.style.opacity = "1"; // オンライン時は明るく
         } else {
             statusBadge.innerText = "● OFFLINE";
             statusBadge.style.color = "#e74c3c";
             playersText.innerText = "0 / --";
-            iconImg.style.opacity = "0.3";
+            iconImg.style.opacity = "0.3"; // オフライン時は暗くして「落ちてる感」を出す
         }
     } catch (e) {
         statusBadge.innerText = "取得エラー";
     }
 }
-
 refreshMCStatus();
 setInterval(refreshMCStatus, 60000);
 </script>
