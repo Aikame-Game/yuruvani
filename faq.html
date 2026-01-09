@@ -66,7 +66,7 @@
         
         <div>
             <div id="mc-status-badge" style="font-size: 0.8em; font-weight: bold; margin-bottom: 5px;">確認中...</div>
-            <div style="font-size: 1.2em; font-weight: bold;">My Server</div>
+            <div style="font-size: 1.2em; font-weight: bold;">ゆるばにら</div>
         </div>
     </div>
 
@@ -80,32 +80,33 @@
 
 <script>
 async function refreshMCStatus() {
-    const ip = 'fryuruvani.f5.si:13560'; // ここを書き換え！
+    const ip = 'fryuruvani.f5.si:13560'; 
     const statusBadge = document.getElementById('mc-status-badge');
     const iconImg = document.getElementById('mc-icon');
     const playersText = document.getElementById('mc-players');
 
     try {
-        const res = await fetch(`https://api.mcsrvstat.us/2/${ip}`);
+        // ★ここを /bedrock/2/ に変更しました
+        const res = await fetch(`https://api.mcsrvstat.us/bedrock/2/${ip}`);
         const data = await res.json();
 
         if (data.online) {
-            // オンライン時の処理
             statusBadge.innerText = "● ONLINE";
             statusBadge.style.color = "#2ecc71";
             playersText.innerText = `${data.players.online} / ${data.players.max}`;
             
-            // アイコンがあれば表示
+            // 統合版でもアイコンが設定されていれば表示
             if (data.icon) {
                 iconImg.src = data.icon;
                 iconImg.style.display = "block";
+                iconImg.style.opacity = "1";
             } else {
-                // アイコンがない場合のデフォルト（草ブロック等）
-                iconImg.src = "https://eu.mc-api.net/v3/server/favicon/" + ip;
+                // アイコンがない場合は、外部サービスから取得を試みるかデフォルト画像を表示
+                iconImg.src = `https://api.mcstatus.io/v2/widget/bedrock/${ip}`; 
                 iconImg.style.display = "block";
+                iconImg.style.opacity = "1";
             }
         } else {
-            // オフライン時の処理
             statusBadge.innerText = "● OFFLINE";
             statusBadge.style.color = "#e74c3c";
             playersText.innerText = "0 / --";
@@ -116,9 +117,7 @@ async function refreshMCStatus() {
     }
 }
 
-// 実行
 refreshMCStatus();
-// 1分ごとに自動更新
 setInterval(refreshMCStatus, 60000);
 </script>
 <!--
