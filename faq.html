@@ -45,11 +45,83 @@
 
 <div id="contents">
 
-<!--
+
 <main>
 
 <section>
+  <h2>サーバーステータス・その他</h2>
 
+  <div id="mc-card" style="
+    background: #1e1e1e; 
+    color: white; 
+    padding: 20px; 
+    border-radius: 12px; 
+    width: 300px; 
+    font-family: sans-serif;
+    border: 2px solid #333;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+    
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <img id="mc-icon" src="" width="64" height="64" style="border-radius: 8px; background: #333; display: none;">
+        
+        <div>
+            <div id="mc-status-badge" style="font-size: 0.8em; font-weight: bold; margin-bottom: 5px;">確認中...</div>
+            <div style="font-size: 1.2em; font-weight: bold;">My Server</div>
+        </div>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #444; margin: 15px 0;">
+
+    <div style="display: flex; justify-content: space-between; font-size: 0.9em;">
+        <span>接続人数:</span>
+        <span id="mc-players" style="font-weight: bold;">-- / --</span>
+    </div>
+</div>
+
+<script>
+async function refreshMCStatus() {
+    const ip = 'fryuruvani.f5.si:13560'; // ここを書き換え！
+    const statusBadge = document.getElementById('mc-status-badge');
+    const iconImg = document.getElementById('mc-icon');
+    const playersText = document.getElementById('mc-players');
+
+    try {
+        const res = await fetch(`https://api.mcsrvstat.us/2/${ip}`);
+        const data = await res.json();
+
+        if (data.online) {
+            // オンライン時の処理
+            statusBadge.innerText = "● ONLINE";
+            statusBadge.style.color = "#2ecc71";
+            playersText.innerText = `${data.players.online} / ${data.players.max}`;
+            
+            // アイコンがあれば表示
+            if (data.icon) {
+                iconImg.src = data.icon;
+                iconImg.style.display = "block";
+            } else {
+                // アイコンがない場合のデフォルト（草ブロック等）
+                iconImg.src = "https://eu.mc-api.net/v3/server/favicon/" + ip;
+                iconImg.style.display = "block";
+            }
+        } else {
+            // オフライン時の処理
+            statusBadge.innerText = "● OFFLINE";
+            statusBadge.style.color = "#e74c3c";
+            playersText.innerText = "0 / --";
+            iconImg.style.opacity = "0.3";
+        }
+    } catch (e) {
+        statusBadge.innerText = "取得エラー";
+    }
+}
+
+// 実行
+refreshMCStatus();
+// 1分ごとに自動更新
+setInterval(refreshMCStatus, 60000);
+</script>
+<!--
 <h2>よく頂く質問集<span class="small">※開閉ブロックタイプ</span></h2>
 
 <dl class="faq">
@@ -93,12 +165,12 @@
 ここに回答を書きます。サンプルテキスト。ここに回答を書きます。サンプルテキスト。ここに回答を書きます。サンプルテキスト。</dd>
 
 </dl>
-
+-->
 </section>
 
 
 </main>
--->
+
 
 <!--開閉ブロック-->
 <div id="menubar">
