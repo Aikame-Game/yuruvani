@@ -581,3 +581,41 @@ footer {
 	.pc {display: block;}
 
 	}/*追加指定ここまで*/
+
+
+
+	/* 無限スクロールの設定 */
+.infinite-slider {
+    overflow: hidden;
+    padding: 40px 0;
+    background: #f4f4f4; /* 背景色はサイトに合わせて調整 */
+}
+
+.scroll-container {
+    display: flex;
+    width: 100%;
+}
+
+.scroll-content {
+    display: flex;
+    animation: infinity-scroll-left 40s infinite linear; /* 40sは速度。長くすると遅くなる */
+}
+
+.scroll-content img {
+    width: 300px; /* 画像の横幅 */
+    height: 200px; /* 画像の縦幅 */
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@keyframes infinity-scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+/* マウスを乗せた時に止まる設定（お好みで） */
+.scroll-container:hover .scroll-content {
+    animation-play-state: paused;
+}
