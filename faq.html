@@ -91,7 +91,7 @@ async function refreshMCStatus() {
     const iconImg = document.getElementById('mc-icon'); // アイコン要素
 
     try {
-        const res = await fetch(`https://api.mcsrvstat.us/bedrock/2/${ip}`);
+        const res = await fetch(`https://api.mcsrvstat.us/2/${ip}`);
         const data = await res.json();
 
         if (data.online) {
