@@ -67,7 +67,7 @@
 <section>
     <h2>あなたの力作を募集中！</h2>
     <div class="new">
-        <p>「ゆるばにら」での楽しい思い出や、自信作の建築を公式ギャラリーに掲載しませんか？プレイヤーの皆様からの投稿を心よりお待ちしております。</p>
+        <p>「ゆるばにら」での思い出をギャラリーに掲載しませんか？投稿をお待ちしております。</p>
         
         <div style="text-align: center; padding: 40px 0;">
             <a href="#modal-pop" style="
@@ -80,73 +80,76 @@
                 font-size: 1.1em;
                 display: inline-block;
                 border-bottom: 5px solid #cc7a00;
-                box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
-                transition: 0.2s;">
+                cursor: pointer;">
                 📷 投稿方法を選択する
             </a>
-            <p style="font-size: 0.8em; color: #666; margin-top: 15px;">※画像送信にはいくつかの方法があります</p>
         </div>
-
-        <h3>掲載までの流れ</h3>
-        <ol>
-            <li>上記のボタンからお好みの投稿方法を選んで、画像をお送りください。</li>
-            <li>送信された画像は、管理者が一枚ずつ大切に拝見（審査）させていただきます。</li>
-            <li>サーバーの雰囲気や景観にマッチした素敵な画像を選定し、本ページに追加掲載します。</li>
-        </ol>
     </div>
 </section>
 
-<div id="modal-pop" style="
-    position: fixed; top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8);
-    display: flex; align-items: center; justify-content: center;
-    opacity: 0; pointer-events: none;
-    transition: 0.4s; z-index: 9999;">
-    
-    <div style="
-        background: #f9f9f9; padding: 30px;
-        border-radius: 15px; max-width: 450px; width: 90%;
-        position: relative; color: #333; text-align: center;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
-        
-        <a href="#" style="position: absolute; top: 15px; right: 20px; text-decoration: none; color: #aaa; font-size: 28px;">&times;</a>
+<div id="modal-pop" class="modal-overlay">
+    <div class="modal-contents">
+        <a href="#" class="modal-close">&times;</a>
             
-        <h3 style="margin-top: 0; color: #ff9900; font-size: 1.4em;">画像投稿ガイド</h3>
-        <p style="font-size: 0.9em; margin-bottom: 25px; color: #555;">
-            アップロード項目があるため直接の埋め込みができません。<br>
-            以下のボタンから専用ページへ移動してください。
-        </p>
+        <h3 style="margin-top: 0; color: #ff9900;">画像投稿ガイド</h3>
+        <p style="font-size: 0.9em; color: #555;">以下のいずれかの方法で送信してください。</p>
         
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlmFkQmokM-2Yg-oE_WIUZmsViviJqTjRbScVcwQdcn0Wj8A/viewform" target="_blank" style="
-            display: block; background: #4285F4; color: white; 
-            padding: 15px; margin-bottom: 15px; text-decoration: none; 
-            border-radius: 8px; font-weight: bold; font-size: 1.05em;
-            box-shadow: 0 3px 0 #3367d6;">
-            📝 専用フォームで投稿 (推奨)
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlmFkQmokM-2Yg-oE_WIUZmsViviJqTjRbScVcwQdcn0Wj8A/viewform" target="_blank" style="display: block; background: #4285F4; color: white; padding: 15px; margin-bottom: 10px; text-decoration: none; border-radius: 8px; font-weight: bold;">
+            📝 専用フォームで投稿
         </a>
         
-        <a href="https://discord.gg/jEcqqDR5jG" target="_blank" style="
-            display: block; background: #5865F2; color: white; 
-            padding: 15px; margin-bottom: 15px; text-decoration: none; 
-            border-radius: 8px; font-weight: bold; font-size: 1.05em;
-            box-shadow: 0 3px 0 #4752c4;">
-            💬 Discordの #gallery チャンネルへ
+        <a href="https://discord.gg/jEcqqDR5jG" target="_blank" style="display: block; background: #5865F2; color: white; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold;">
+            💬 Discordで投稿
         </a>
-
-        <p style="font-size: 0.75em; color: #888; margin-top: 15px; text-align: left;">
-            ※フォームを利用する場合、画像の不正アップロード防止のためGoogleログインが必要です。<br>
-            ※ログインなしを希望の方はDiscordをご利用ください。
-        </p>
 
         <div style="margin-top: 20px;">
-            <a href="#" style="color: #3498db; text-decoration: none; font-weight: bold;">閉じる</a>
+            <a href="#" style="color: #3498db; text-decoration: none;">閉じる</a>
         </div>
     </div>
 </div>
 
 <style>
-    #modal-pop:target { opacity: 1; pointer-events: auto; }
+/* 最初は隠しておく */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    
+    /* 非表示設定 */
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+/* ボタンが押された（URLの末尾が #modal-pop になった）時だけ表示 */
+.modal-overlay:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-contents {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    text-decoration: none;
+    color: #333;
+}
 </style>
 
 </main>
