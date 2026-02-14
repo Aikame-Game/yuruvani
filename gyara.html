@@ -70,29 +70,49 @@
         <p>「ゆるばにら」での思い出をギャラリーに掲載しませんか？投稿をお待ちしております。</p>
         
         <div style="text-align: center; padding: 40px 0;">
-            <a href="#modal-pop" style="
+            <button onclick="openVaniModal()" style="
                 background: #ff9900; 
                 color: white; 
                 padding: 18px 35px; 
-                text-decoration: none; 
+                border: none;
                 border-radius: 5px; 
                 font-weight: bold; 
                 font-size: 1.1em;
                 display: inline-block;
                 border-bottom: 5px solid #cc7a00;
-                cursor: pointer;">
+                cursor: pointer;
+                box-shadow: 0 4px 15px rgba(255,153,0,0.3);">
                 📷 投稿方法を選択する
-            </a>
+            </button>
         </div>
     </div>
 </section>
 
-<div id="modal-pop" class="modal-overlay">
-    <div class="modal-contents">
-        <a href="#" class="modal-close">&times;</a>
+<div id="vani-modal" style="
+    display: none; 
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.8); 
+    z-index: 99999; 
+    align-items: center; 
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;">
+    
+    <div style="
+        background: white; 
+        padding: 30px; 
+        border-radius: 15px; 
+        width: 90%; 
+        max-width: 400px; 
+        text-align: center; 
+        position: relative;">
+        
+        <span onclick="closeVaniModal()" style="position: absolute; top: 10px; right: 15px; font-size: 28px; cursor: pointer; color: #aaa;">&times;</span>
             
         <h3 style="margin-top: 0; color: #ff9900;">画像投稿ガイド</h3>
-        <p style="font-size: 0.9em; color: #555;">以下のいずれかの方法で送信してください。</p>
+        <p style="font-size: 0.9em; color: #555; margin-bottom: 20px;">以下のいずれかの方法で送信してください。</p>
         
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlmFkQmokM-2Yg-oE_WIUZmsViviJqTjRbScVcwQdcn0Wj8A/viewform" target="_blank" style="display: block; background: #4285F4; color: white; padding: 15px; margin-bottom: 10px; text-decoration: none; border-radius: 8px; font-weight: bold;">
             📝 専用フォームで投稿
@@ -102,55 +122,35 @@
             💬 Discordで投稿
         </a>
 
-        <div style="margin-top: 20px;">
-            <a href="#" style="color: #3498db; text-decoration: none;">閉じる</a>
-        </div>
+        <button onclick="closeVaniModal()" style="margin-top: 20px; background: none; border: none; color: #3498db; cursor: pointer; font-weight: bold;">閉じる</button>
     </div>
 </div>
 
-<style>
-/* 最初は隠しておく */
-.modal-overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    
-    /* 非表示設定 */
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.4s;
+<script>
+function openVaniModal() {
+    const modal = document.getElementById('vani-modal');
+    modal.style.display = 'flex';
+    setTimeout(() => {
+        modal.style.opacity = '1';
+    }, 10);
 }
 
-/* ボタンが押された（URLの末尾が #modal-pop になった）時だけ表示 */
-.modal-overlay:target {
-    opacity: 1;
-    pointer-events: auto;
+function closeVaniModal() {
+    const modal = document.getElementById('vani-modal');
+    modal.style.opacity = '0';
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 300);
 }
 
-.modal-contents {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    position: relative;
+// モーダルの外側をクリックしても閉じるようにする
+window.onclick = function(event) {
+    const modal = document.getElementById('vani-modal');
+    if (event.target == modal) {
+        closeVaniModal();
+    }
 }
-
-.modal-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 28px;
-    text-decoration: none;
-    color: #333;
-}
-</style>
+</script>
 
 </main>
 
