@@ -55,11 +55,12 @@
    <dl class="faq">
 
 <dt class="openclose">景色/建物</dt>
-<dd><img src="https://cdn.discordapp.com/attachments/1467158693165666367/1469327730729549845/image.png?ex=69874195&is=6985f015&hm=4b5f0e27b4d09e7ce7b951a5838dd875203700b2ef1f8c793e81b207728e9c47&">
-<hr><img src="https://cdn.discordapp.com/attachments/1467158693165666367/1469328161958264894/image.png?ex=698741fc&is=6985f07c&hm=9846cd89cba56c45bc670c30ffb2b0bb758b94b229477fe9b8a821e0b718ac70&"> 
-<hr><img src="https://cdn.discordapp.com/attachments/1467158693165666367/1469329503636426915/image.png?ex=6987433c&is=6985f1bc&hm=b729b7dc06ac40440efa380113744a8db045ad28ca224e035d400d73fa8b5b6d&">
-<hr><img src="https://cdn.discordapp.com/attachments/1467158693165666367/1469330013332443146/image.png?ex=698743b6&is=6985f236&hm=8a7fcef9647ef6c849943c29b15f94afd92e04150efd39bc4c05373b6940f69b&">
-<hr><img src="https://cdn.discordapp.com/attachments/1467158693165666367/1469329197167280138/image.png?ex=698742f3&is=6985f173&hm=dfcc00b99789556eb1e28f41ddd9a8ecda27a34a06558db2808fd3fabbd7d614&">
+<dd><img src="images-gyara/tate1.png">
+<hr><img src="images-gyara/tate2.png"> 
+<hr><img src="images-gyara/tate3.png">
+<hr><img src="images-gyara/tate4.png">
+<hr><img src="images-gyara/tate5.png">
+<hr><img src="images-gyara/tate6.png">
 </dd></dl>
 
 </section>
@@ -69,7 +70,7 @@
         <p>「ゆるばにら」での楽しい思い出や、自信作の建築を公式ギャラリーに掲載しませんか？プレイヤーの皆様からの投稿を心よりお待ちしております。</p>
         
         <div style="text-align: center; padding: 40px 0;">
-            <a href="ここに作成したフォームのURLを入れる" target="_blank" style="
+            <a href="#modal-pop" style="
                 background: #ff9900; 
                 color: white; 
                 padding: 18px 35px; 
@@ -79,21 +80,50 @@
                 font-size: 1.1em;
                 display: inline-block;
                 border-bottom: 5px solid #cc7a00;
+                box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
                 transition: 0.2s;">
-                📷 スクリーンショットを投稿する
+                📷 投稿フォームを開く
             </a>
-            <p style="font-size: 0.8em; color: #666; margin-top: 15px;">※Googleアカウントへのログインが必要です</p>
+            <p style="font-size: 0.8em; color: #666; margin-top: 15px;">※画像アップロードにはGoogleログインが必要です</p>
         </div>
 
         <h3>掲載までの流れ</h3>
         <ol>
-            <li>上記のボタンからフォームを開き、画像をアップロードして送信してください。</li>
+            <li>上記のボタンから専用フォームを開き、画像を送信してください。</li>
             <li>送信された画像は、管理者が一枚ずつ大切に拝見（審査）させていただきます。</li>
             <li>サーバーの雰囲気や景観にマッチした素敵な画像を選定し、本ページに追加掲載します。</li>
         </ol>
-        <p>※画像内にチャットログなどの個人情報が含まれないようご注意ください。皆様の投稿をお待ちしています！</p>
+        <p>※Discordやメールでの投稿も受け付けています。詳しくは公式Discordをご確認ください。</p>
     </div>
 </section>
+
+<div id="modal-pop" style="
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: 0.5s; z-index: 9999;">
+    
+    <div style="
+        background: white; padding: 20px;
+        border-radius: 10px; max-width: 640px; width: 95%;
+        height: 80vh; position: relative; overflow-y: auto;">
+        
+        <a href="#" style="position: absolute; top: 10px; right: 20px; text-decoration: none; color: #333; font-size: 30px; font-weight: bold;">&times;</a>
+            
+        <h3 style="text-align: center; color: #ff9900; margin-bottom: 15px;">画像投稿フォーム</h3>
+
+        <div style="width: 100%; height: calc(100% - 60px); -webkit-overflow-scrolling: touch;">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdlmFkQmokM-2Yg-oE_WIUZmsViviJqTjRbScVcwQdcn0Wj8A/viewform?embedded=true" 
+                width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+        </div>
+    </div>
+</div>
+
+<style>
+    #modal-pop:target { opacity: 1; pointer-events: auto; }
+</style>
 
 </main>
 
