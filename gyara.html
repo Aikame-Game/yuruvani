@@ -82,18 +82,17 @@
                 border-bottom: 5px solid #cc7a00;
                 box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
                 transition: 0.2s;">
-                📷 投稿フォームを開く
+                📷 投稿方法を選択する
             </a>
-            <p style="font-size: 0.8em; color: #666; margin-top: 15px;">※画像アップロードにはGoogleログインが必要です</p>
+            <p style="font-size: 0.8em; color: #666; margin-top: 15px;">※画像送信にはいくつかの方法があります</p>
         </div>
 
         <h3>掲載までの流れ</h3>
         <ol>
-            <li>上記のボタンから専用フォームを開き、画像を送信してください。</li>
+            <li>上記のボタンからお好みの投稿方法を選んで、画像をお送りください。</li>
             <li>送信された画像は、管理者が一枚ずつ大切に拝見（審査）させていただきます。</li>
             <li>サーバーの雰囲気や景観にマッチした素敵な画像を選定し、本ページに追加掲載します。</li>
         </ol>
-        <p>※Discordやメールでの投稿も受け付けています。詳しくは公式Discordをご確認ください。</p>
     </div>
 </section>
 
@@ -103,20 +102,45 @@
     background: rgba(0,0,0,0.8);
     display: flex; align-items: center; justify-content: center;
     opacity: 0; pointer-events: none;
-    transition: 0.5s; z-index: 9999;">
+    transition: 0.4s; z-index: 9999;">
     
     <div style="
-        background: white; padding: 20px;
-        border-radius: 10px; max-width: 640px; width: 95%;
-        height: 80vh; position: relative; overflow-y: auto;">
+        background: #f9f9f9; padding: 30px;
+        border-radius: 15px; max-width: 450px; width: 90%;
+        position: relative; color: #333; text-align: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
         
-        <a href="#" style="position: absolute; top: 10px; right: 20px; text-decoration: none; color: #333; font-size: 30px; font-weight: bold;">&times;</a>
+        <a href="#" style="position: absolute; top: 15px; right: 20px; text-decoration: none; color: #aaa; font-size: 28px;">&times;</a>
             
-        <h3 style="text-align: center; color: #ff9900; margin-bottom: 15px;">画像投稿フォーム</h3>
+        <h3 style="margin-top: 0; color: #ff9900; font-size: 1.4em;">画像投稿ガイド</h3>
+        <p style="font-size: 0.9em; margin-bottom: 25px; color: #555;">
+            アップロード項目があるため直接の埋め込みができません。<br>
+            以下のボタンから専用ページへ移動してください。
+        </p>
+        
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlmFkQmokM-2Yg-oE_WIUZmsViviJqTjRbScVcwQdcn0Wj8A/viewform" target="_blank" style="
+            display: block; background: #4285F4; color: white; 
+            padding: 15px; margin-bottom: 15px; text-decoration: none; 
+            border-radius: 8px; font-weight: bold; font-size: 1.05em;
+            box-shadow: 0 3px 0 #3367d6;">
+            📝 専用フォームで投稿 (推奨)
+        </a>
+        
+        <a href="https://discord.gg/jEcqqDR5jG" target="_blank" style="
+            display: block; background: #5865F2; color: white; 
+            padding: 15px; margin-bottom: 15px; text-decoration: none; 
+            border-radius: 8px; font-weight: bold; font-size: 1.05em;
+            box-shadow: 0 3px 0 #4752c4;">
+            💬 Discordの #gallery チャンネルへ
+        </a>
 
-        <div style="width: 100%; height: calc(100% - 60px); -webkit-overflow-scrolling: touch;">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdlmFkQmokM-2Yg-oE_WIUZmsViviJqTjRbScVcwQdcn0Wj8A/viewform?embedded=true" 
-                width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+        <p style="font-size: 0.75em; color: #888; margin-top: 15px; text-align: left;">
+            ※フォームを利用する場合、画像の不正アップロード防止のためGoogleログインが必要です。<br>
+            ※ログインなしを希望の方はDiscordをご利用ください。
+        </p>
+
+        <div style="margin-top: 20px;">
+            <a href="#" style="color: #3498db; text-decoration: none; font-weight: bold;">閉じる</a>
         </div>
     </div>
 </div>
