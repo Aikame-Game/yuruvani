@@ -591,10 +591,14 @@ footer {
     aspect-ratio: 16/9;
 }
 
-.new::before{
+.new::before {
+    position: absolute;
     content: "NEW";
+    top: -7px;
+    left: -20px;
     background-color: crimson;
     padding: 5px 25px;
+    transform: rotate(-30deg);
 }
 
 	
