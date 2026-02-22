@@ -173,7 +173,8 @@ header address {
 	overflow: hidden;
 
 	margin-bottom: 8vw; /* ← sectionと同じ間隔 */
-  }
+}
+  
   /*  ↓ スライド（コンテンツ） */
   .slide { /*スライド全体 */
 	width: 300%;
