@@ -159,6 +159,7 @@ header address {
 /* スライダーとコンテンツの間隔 */
 #mainimg {
     margin-bottom: 60px;
+	overflow: hidden;
 }
 *,body,ul {
 	
