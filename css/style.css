@@ -161,12 +161,7 @@ header address {
     margin-bottom: 60px;
 	overflow: hidden;
 }
-*,body,ul {
-	margin-bottom: 60px;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-  }
+
   li {
 	list-style: none;
   }
@@ -175,7 +170,9 @@ header address {
 	width: 100%;
 	height: 300px;
 	position: relative;
-	overflow: hidden; /* はみ出したスライドを隠す */
+	overflow: hidden;
+
+	margin-bottom: 8vw; /* ← sectionと同じ間隔 */
   }
   /*  ↓ スライド（コンテンツ） */
   .slide { /*スライド全体 */
