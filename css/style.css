@@ -336,12 +336,13 @@ main h1 {
 }
 @media (min-width: 900px) {
     .contact-box {
+		margin-right: 20px;
         display: flex;
 	
 		
     }
 	.box1{
-		margin-right: 10px;
+		margin-right: 20px;
 		display: flex;
 	}
 	
