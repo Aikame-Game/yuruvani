@@ -157,10 +157,11 @@ header address {
 /*トップページのメイン画像
 ---------------------------------------------------------------------------*/
 /* スライダーとコンテンツの間隔 */
-#mainimg {
-    margin-bottom: 60px;
-	overflow: hidden;
-}
+
+	#mainimg {
+		margin-bottom: 8vw;  /* sectionと同じ余白 */
+	}
+   
 
   li {
 	list-style: none;
