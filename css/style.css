@@ -162,7 +162,8 @@ header address {
 	overflow: hidden;
 }
 *,body,ul {
-	
+	margin-bottom: 60px;
+	overflow: hidden;
 	margin: 0;
 	padding: 0;
   }
