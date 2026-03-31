@@ -473,11 +473,19 @@ footer {
 /*テキストブロック*/
 .list-normal .text {
 	flex: 1;
+	background: #fff;                 /* 背景色 */
+	padding: 20px;                   /* 内側余白 */
+	border-radius: 12px;             /* 角丸 */
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 影 */
 }
 
 /*画像ブロック*/
 .list-normal figure {
 	width: 40%;	/*幅。お好みで。*/
+	background: #fff;                 /* 背景色 */
+	padding: 20px;                   /* 内側余白 */
+	border-radius: 12px;             /* 角丸 */
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 影 */
 }
 
 /*h4見出し*/
@@ -485,11 +493,19 @@ footer {
 	margin: 0;
 	margin-bottom: 0.5rem;	/*下に少しスペースをとる*/
 	font-size: 1.2rem;	/*文字サイズを120%に*/
+	background: #fff;                 /* 背景色 */
+	padding: 20px;                   /* 内側余白 */
+	border-radius: 12px;             /* 角丸 */
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 影 */
 }
 
 /*説明テキスト*/
 .list-normal p {
 	margin: 0;	
+	background: #fff;                 /* 背景色 */
+	padding: 20px;                   /* 内側余白 */
+	border-radius: 12px;             /* 角丸 */
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 影 */
 }
 
 
