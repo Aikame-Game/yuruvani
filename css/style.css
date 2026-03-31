@@ -341,13 +341,13 @@ main h1 {
 
     .box1 {
         display: flex;
-        gap: 50px; /* ← ここで横の間隔を調整 */
+        gap: 60px; /* ← ここで横の間隔を調整 */
     }
 }
 
 
 .icon {
-    width: 100px; /* 必要に応じて調整 */
+    width: 90px; /* 必要に応じて調整 */
     height: auto;
 }
 .akamoji{
