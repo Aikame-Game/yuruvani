@@ -458,10 +458,16 @@ footer {
 ---------------------------------------------------------------------------*/
 /*ボックス１個あたり*/
 .list-normal .list {
-	display: flex;		/*直接の子要素を横並びにする*/
-	gap: 2vw;			/*左右の間のマージン的なスペース*/
-	margin-bottom: var(--global-space);	/*ボックスの下に空けるスペース。css冒頭で指定しているglobal-spaceを読み込みます。*/
-	line-height: 2;		/*行間を少し狭く*/
+	display: flex;
+	gap: 2vw;
+	margin-bottom: var(--global-space);
+	line-height: 2;
+
+	/* ▼ 追加部分（カード化） */
+	background: #fff;                 /* 背景色 */
+	padding: 20px;                   /* 内側余白 */
+	border-radius: 12px;             /* 角丸 */
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 影 */
 }
 
 /*テキストブロック*/
