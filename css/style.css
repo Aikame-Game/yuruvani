@@ -508,7 +508,7 @@ footer {
 
 /*「Q」のテキスト*/
 .faq dt::before {
-	content: "Q.";			/*このテキストを表示させます*/
+	content: "タップで展開";			/*このテキストを表示させます*/
 	position: absolute;
 	left: 0;
 	top: 0;
