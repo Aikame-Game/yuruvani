@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+/*wikiページ専用（service.html）
+---------------------------------------------------------------------------*/
+.list-normal .list {
+	display: flex;
+	gap: 2vw;
+	margin-bottom: var(--global-space);
+	line-height: 2;
+}
+
+.list-normal .list,
+.list-normal .text,
+.list-normal figure,
+.list-normal h4,
+.list-normal p {
+	background: #fff;
+	padding: 20px;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.list-normal .text {
+	flex: 1;
+}
+
+.list-normal figure {
+	width: 40%;
+}
+
+.list-normal h4 {
+	margin: 0;
+	margin-bottom: 0.5rem;
+	font-size: 1.2rem;
+}
+
+.list-normal p {
+	margin: 0;
+}
+
+.akamoji {
+	color: red;
+	font-size: large;
+}
