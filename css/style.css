@@ -64,60 +64,7 @@ body {
 	line-height: 3;		/*行間*/
 	animation: opa1 0.2s 0.5s both;
 }
-/* 5/9追加の規約お知らせボックス */
-.rule-notice{
-    background: #fff3cd;
-    border: 2px solid #ffcc00;
-    border-left: 8px solid #ff9900;
 
-    padding: 20px;
-    margin: 20px auto;
-
-    border-radius: 10px;
-
-    max-width: 900px;
-
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* タイトル */
-.rule-notice-title{
-    font-size: 24px;
-    font-weight: bold;
-    color: #cc3300;
-
-    margin-bottom: 10px;
-}
-
-/* 本文 */
-.rule-notice p{
-    margin: 0;
-    line-height: 1.8;
-    font-size: 16px;
-}
-
-/* ボタン */
-.rule-button{
-    display: inline-block;
-
-    margin-top: 15px;
-    padding: 12px 20px;
-
-    background: #ff6600;
-    color: white;
-
-    text-decoration: none;
-    font-weight: bold;
-
-    border-radius: 8px;
-
-    transition: 0.2s;
-}
-
-/* ホバー */
-.rule-button:hover{
-    background: #e05500;
-}
 /*リセット*/
 figure {margin: 0;}
 dd {margin: 0;}
