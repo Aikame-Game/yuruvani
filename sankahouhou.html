@@ -81,7 +81,7 @@
                         line-height: 1.7;
                     }
             */
-                    .agreement-box {
+                    g.areement-box {
                         max-width: 700px;
                         margin: auto;
                         padding: 25px;
@@ -98,11 +98,14 @@
 
                     .button-area {
                         margin-top: 20px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 12px;
                     }
 
                     button {
                         padding: 10px 20px;
-                        margin-right: 10px;
+                        margin-right: 0;
                         border: none;
                         border-radius: 6px;
                         cursor: pointer;
@@ -147,6 +150,17 @@
                         margin-top: 15px;
                         color: red;
                         font-weight: bold;
+                    }
+
+                    @media (max-width: 899px) {
+                        .button-area {
+                            flex-direction: column;
+                            align-items: stretch;
+                        }
+
+                        button {
+                            width: 100%;
+                        }
                     }
                 </style>
                 <!--隠すやつ-->
