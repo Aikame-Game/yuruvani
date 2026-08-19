@@ -9,11 +9,14 @@
 	line-height: 2;
 }
 
-.list-normal .list,
-/*.list-normal p,
-/*.list-normal .text,*/
-.list-normal figure
-/*.list-normal h4*/{
+.list-normal .list{
+	background: #0b0b0b;
+	padding: 20px;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.list-normal figure{
 	background: #fff;
 	padding: 20px;
 	border-radius: 12px;
