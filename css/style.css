@@ -242,6 +242,11 @@ main h1 {
 #menubar ul {list-style: none;margin: 0;padding: 0;}
 #menubar a {display: block;text-decoration: none;}
 .large-screen #menubar {opacity: 1;}
+.large-screen #menubar {
+	position: sticky;
+	top: 0;
+	align-self: flex-start;
+}
 .small-screen #menubar.display-none {display: none;}
 .small-screen #menubar.display-block {display: block;opacity: 1;}
 #menubar_hdr.display-none {display: none;}
